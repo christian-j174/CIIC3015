@@ -18,7 +18,7 @@ print(DoIWin('scissors','paper'))
 
 #ALTERNATIVE SOLUTION
 
-def DoIWin(me,you):
+def DoIWin2(me,you):
     R,P,S = 'rock', 'paper', 'scissors'
     me, you = me.lower(), you.lower()
     if me.find(R) > -1:
@@ -29,6 +29,6 @@ def DoIWin(me,you):
 
 print('--------------------------------+')
 print('TEST#1')
-print(DoIWin('rock','paper'))
+print(DoIWin2('rock','paper'))
 print('TEST #2')
-print(DoIWin('scissors','paper'))
+print(DoIWin2('scissors','paper'))
