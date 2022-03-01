@@ -16,7 +16,7 @@ options = """1. Deposit some funds
 4. Create new account
 5. Quit
 """
-# LOGS OF VARIABLES # LAS VECES QUE OCURRIO ESA FUNCIONALIDAD
+# LOGS OF VARIABLES # LAS VECES QUE OCURRE ESA FUNCIONALIDAD
 log_reward = 0
 log_penalty = 0
 log_deposit = 0
