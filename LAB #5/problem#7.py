@@ -13,7 +13,7 @@ applying the discount for each vegetable. The formula
 
 x = int(input('Enter how many vegetables you need to buy: '))
 amount = float(input('Enter total amount of your purchase: '))
-for i in range(1 ,x+1):
+for i in range(1, x+1):
     f = i * amount * 0.05
     amount -= f
 
