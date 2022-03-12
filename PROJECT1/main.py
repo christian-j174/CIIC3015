@@ -98,7 +98,7 @@ while run:      #MAIN LOOP
         successful_withdrawn = 0
         unsuccessful_withdrawn = 0
 
-    elif user_choice == 5:      #PRINT THE VALUES OF ALL VARIABLES
+    elif user_choice == 5:      #PRINT THE VALUES OF ALL VARIABLE
         print( '\tFINAL BALANCE' )
         print(f'Your final balance is: ${balance}')
         print( f'The total of times attempted to deposit: {log_deposit}' )
