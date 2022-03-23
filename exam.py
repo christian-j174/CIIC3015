@@ -133,20 +133,19 @@ Repeat while N<= P
 # if (z < x) and (z < y):
 #     print(z)
 
-
-x = int(input('Enter a number: '))
-
-counter = x
-n = 1
-# sequence to 1 to n
-
-while counter != 0:
-    n += 1
-    counter -= 1
-    if n % 5 == 0:
-        print(n)
-
-
+#
+# x = int(input('Enter a number: '))
+#
+# counter = x
+# n = 1
+# # sequence to 1 to n
+#
+# while counter != 0:
+#     n += 1
+#     counter -= 1
+#     if n % 5 == 0:
+#         print(n)
+#
 
 
 
