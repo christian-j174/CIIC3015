@@ -9,6 +9,7 @@
 
 # THE FOLLOWING LIST CONTAINS THE UNITS OF THE INGREDIENTS
 units = ['cups', 'tablespoons', '', 'cups', 'teaspoons', 'teaspoons', 'slices', '']
+#maybe units are indetified with their corresponding index
 
 # THE FOLLOWING LIST CONTAINS THE NAMES OF THE INGREDIENTS
 ingredients = ['flour', 'sugar', 'eggs', 'milk', 'cinnamon', 'baking powder', 'bread', 'fruits']
