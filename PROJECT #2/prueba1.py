@@ -1,6 +1,8 @@
 
 
 
+
+
         #INICIALIZAR VARIABLES
 cook = True
 units = ['cups', 'tablespoons', '', 'cups', 'teaspoons', 'teaspoons', 'slices', '']
@@ -19,14 +21,13 @@ pantry = []
 
 def pantry_update():
     """Un for loop, """
-    pantry_updateV2()
     if verify_pantry():     #VAMOS A RESTAR RECIPE
         resultado = 0
         for i in range(0,8):
             pantry[i] -= recipe[i]
         print( "Great choice. That was delicious!" )
-    # else:
-    #     print('Not enough ingredients!')
+    else:
+        print('Not enough ingredients!')
 
 def verify_pantry():
     """ Return True if there are enough ingredients in the pantry """
@@ -170,21 +171,6 @@ def show_recipe(option):
             else:
                 print( f"{scrambled_eggs[i]} {units[i]} of {ingredients[i]}" )
 
-def pantry_updateV2():
-    index_track = list()
-    for i in range(0,8):
-        if pantry[i] < recipe[i]:
-            index_track.append(i)
-    #----------------------------------
-    for index in index_track:
-        print("Not enough ingredients! Let's update it.")
-        if index == 7 or index == 2:
-            user = float(input(f"How many {ingredients[index]} do you have? "))
-            pantry[index] += user
-        else:
-            user = float(input(f"How many {units[index]} of {ingredients[index]} do you have? "))
-            pantry[index] += user
-
 #---------------------------------------------------------------------------------------
 
 
@@ -212,3 +198,4 @@ while cook:
     # If sufficient ingredients remain, subtract ingredients used, and present remaining amount.
     print( "Here's what's left in the pantry: " )
     show_pantry()
+
