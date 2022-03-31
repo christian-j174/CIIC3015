@@ -81,32 +81,27 @@ def recipe_menu():
 def valid_option(option):
     if option == 1:
         # banana_pancake
-        recipe = [1, 2, 1, 1, 3, 2, 0, 2]
-        return recipe
+        return [1, 2, 1, 1, 3, 2, 0, 2]
 
     elif option == 2:
         # peach_crepe
-        recipe = [1, 0, 1, 1, 2, 0, 0, 3]
-        return recipe
+        return [1, 0, 1, 1, 2, 0, 0, 3]
 
     elif option == 3:
         # apple_pie
-        recipe = [2, 4, 2, 0.5, 1, 1, 0, 5]
-        return recipe
+        return [2, 4, 2, 0.5, 1, 1, 0, 5]
 
     elif option == 4:
         # french_toast
-        recipe = [0.5, 3, 3, 0.5, 2, 0, 8, 0]
-        return recipe
+        return [0.5, 3, 3, 0.5, 2, 0, 8, 0]
 
     elif option == 5:
         # scrambled_eggs
-        recipe = [0, 0, 4, 0.5, 0, 0, 2, 1.5]
-        return recipe
+        return [0, 0, 4, 0.5, 0, 0, 2, 1.5]
 
     elif option == 6:
         cook = False
-        return False
+        return [0,0,0,0,0,0,0,0]
 
 
 def show_recipe(option):
@@ -184,10 +179,10 @@ def pantry_updateV2():
 
 
 def servings(recipe):
-    servings = float( input( "How many servings? " ) )
+    serving = float( input( "How many servings? " ) )
     result = []
     for element in recipe:
-        result.append( servings * element )
+        result.append( serving * element )
     recipe = result.copy()
     return recipe
 
@@ -204,20 +199,23 @@ pantry_ingredients( units, ingredients )
 
 while cook:
     # Ask user what they'd like to make (from options)
-    option = recipe_menu()
+    option = recipe_menu()      #EL INPUT DEL USUARIO DE LO QUE QUIERE HACER
+    recetas = valid_option( option )    #CREA LA LISTA DE RECETAS
+    recetas = servings( recetas )
+
     print( 'You selected option', option )
-    show_recipe( option )
-    recetas = valid_option( option )
-    recipe = servings( recetas )
-    print( "Here's what's left in the pantry: " )
-    show_pantry()
-    if recetas == False:
+
+    if recetas[0] == 0:             #ESTE ES LA OPCION #6
         print( "See you later!" )
         break
 
-    recipe = servings( recetas )
+    show_recipe( option )
+    print( "Here's what's left in the pantry: " )
+    show_pantry()
+    # if recetas == False:
+    #     print( "See you later!" )
+    #     break
     pantry_update()
 
-    # If sufficient ingredients remain, subtract ingredients used, and present remaining amount.
     print( "Here's what's left in the pantry: " )
     show_pantry()
