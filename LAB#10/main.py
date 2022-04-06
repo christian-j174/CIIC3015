@@ -1,35 +1,31 @@
-#
-# cars = open ('cars.txt', 'a')
-# cars.write ('MY FAVORITE CAR IS THE FORD MUSTANG ')
-#
-# #print(cars.read())
-# cars.close()
+fname = 'cities.txt'  # Use this file name
+maxC = 0  # Farthest distance
+minC = -1  # Closest
+distance = 0  # track distance for every line
+Mintown = ''  # Closest city
+Maxtown = ''  # Farthest city
+town = ''  # track town name
+
+#_----------------------------------
+fhandle = open( fname )
+for line in fhandle:
+    line = line.rstrip()
+    x = line.find( ',' )
+    distance = int( line[:x] )
+    y = x + 1
+    town = line[y::]
+
+    if distance < minC or minC == -1:
+        minC = distance
+        Mintown = town
+
+    if distance > maxC:
+        maxC = distance
+        Maxtown = town
+fhandle.close()
 
 
-# # This program writes three lines of data to a file.
-# def main():
-#     # Open a file named ff.txt.
-#     outfile = open( 'ff.txt', 'w' )
-#     # Write the names of three philosphers to the file.
-#     outfile.write( 'John Locke\n' )
-#     outfile.write( 'David Hume\n' )
-#     outfile.write( 'Edmund Burke\n' )
-#     # Close the file.
-#     outfile.close()
-#
-#     outfile = open('ff.txt', 'r')
-#     print(outfile.readline())
-#     # Call the main function.
-#
-#
-# main()
+print( f"Closest city is {Mintown}: {minC}" )
+print( f"Farthest city is {Maxtown}: {maxC}" )
 
-
-
-
-
-fhand = open('ff.txt')
-x = 0
-for line in fhand :
-    x = x + 1
-print(x)
+# Don't forget to close the file when you've finished
