@@ -10,3 +10,14 @@ for line in fh:
 # print( new_string )
 fh.close()
 new_fh.close()
+
+
+
+
+archivo = input( "Enter file name: " )
+fh = open( archivo )
+newFile = open( "notabs.py", 'w' )
+for line in fh:
+    newFile.write( line.replace( '\t', '   ' ) )
+fh.close()
+newFile.close()
