@@ -41,18 +41,20 @@
 # print(interlace(['a','b','c'],[1,2,3]))
 #
 
-def is_perfect_number(num):
-    acc = 0
-    for i in range( 1, num ):
-        if num % i == 0:  # if divisible, adds up
-            acc += i
-    if acc == num:
-        return True
-    else:
-        return False
+# def is_perfect_number(num):
+#     acc = 0
+#     for i in range( 1, num ):
+#         if num % i == 0:  # if divisible, adds up
+#             acc += i
+#     if acc == num:
+#         return True
+#     else:
+#         return False
+#
+#
+# print(is_perfect_number(3))
 
 
-print(is_perfect_number(3))
 
 
 
