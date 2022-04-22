@@ -1,4 +1,15 @@
 Mayaguez,70 b
 Adjuntas,45 nb
-Aguada,71 b
+Aguada,71   b
 Aguadilla,69 b
+Aguas Buenas,14 nb
+Barceloneta,29 nb
+Bayamon,6 nb
+Culebra,54 b
+Vega Alta,16 nb
+Trujillo Alto,10 b
+Rincon,76 b
+San Sebastian,59 nb
+Yauco,57 nb
+Cabo Rojo,73 b
+Vieques,49 b

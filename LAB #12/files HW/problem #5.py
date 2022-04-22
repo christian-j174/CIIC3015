@@ -1,38 +1,23 @@
-"""
-Your task is to write a function that receives the name of the file,
-read the file and returns the nearest city to San Juan that has a beach.
-"""
-
-def shortest_beach(file):
+def beach_dist(file):
     fh = open(file)
-    town = ''
-    shortest_town = ''
-    distance = 0
+    db = dict()
+    Maxxx = 99999999999
     d1 = 0
     town = ''
     status = None
-    starting_run = 1
+    rr = 0
     for line in fh:
-        line = line.strip()
+        line = line.strip('\n')
         town = line[:line.find(',')]        #desde 0 hasta la primera comma
-        distance = int(line[line.find(',')+1:line.find(' ')])
-        status = line[line.find(' '):]
-        #print(status, town)
-        # --------------------------------------------
-        if status == 'b':
-            if starting_run == 1:  # ESTE ES UN CASO ESPECIAL PARA EL VALOR MINIMO
-                starting_run -= 1
-                d1 = distance
-                shortest_town = town
-            # -------------------------------------------
-            if distance < d1:
-                d1 = distance
-                shortest_town = town
+        distance = line[line.find(',')+1:line.find(' ', line.find(','))]
+        status = line[line.find(distance)+ len(distance):]
+        status = status.strip()
+        db[town] = (int(distance), status)
 
-    print(shortest_town)
+    for key,value in db.items():
+        if value[1] == 'b':
+            if (value[0]) < Maxxx:
+                rr = key
+                Maxxx = value[0]
+    return rr
 
-
-
-
-
-shortest_beach('test5.txt')
