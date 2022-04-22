@@ -1,17 +1,3 @@
-def Inventory(file):
-    fh = open(file)
-    result = dict()
-    for line in fh:
-        line = line.strip('\n')
-        if line not in result:
-            result[line] = 1
-        else:
-            result[line] += 1
-    fh.close()
-    return result
-
-
-
 
 """
 Sudoku is a solitaire game in which you try to fill a 9x9 grid with numbers from 1 through 9
@@ -33,7 +19,7 @@ def DoIWin(file):
     rows = []
     columns = []
 #------------------------------------------------------------------------------------
-#ITERA POR CADA LINEA Y ANADELAS A ROWS COMO LISTA, ENTONCES TENEMEOS UNA LISTA DE LISTAS
+#ITERA POR CADA LINEA Y ANADELAS A ROWS COMO LISTA,
     for line in fh:
         if line.startswith('\n'):       #REMUEVE LOS NEWLINES
             continue
@@ -41,6 +27,7 @@ def DoIWin(file):
             line = line.strip('\n')             #REMUEVE LOS NEWLINES
             line = line.replace(' ', '')       #REMUEVE LOS ESPACIOS ENTRE LOS NUEMROS
             rows.append(line)                   #ANADE ESA LINEA A ROWS
+#################################################
     for k in rows:
         if checkSum(k) == False:
             return False
@@ -56,9 +43,11 @@ def DoIWin(file):
         column += ' '
     columns.append( column )
     columns = columns[0].split()
+################################################
     for z in columns:
         if checkSum(z) == False:
             return False
+            #return False
 #-----------------------------------------------------------
 #CREA UNA LISTA EN ORDEN DE TODOS LOS NUMEROS, PARA LOS GRUPOS 3X3
     TotalNumbers = ''
@@ -66,28 +55,26 @@ def DoIWin(file):
         TotalNumbers += k
 #----------------------------------------------------------------
 #GRUPOS 3X3
-    group0 = [0,1,2,27,28,29,54,55,56]
-    group1 = [3,4,5,30,31,32,57,58,59]
-    group2 = [6,7,8,33,34,35,60,61,62]
-    group3 = [9,10,11,36,37,38,63,64,65]
-    group4 = [12,13,14,39,40,41,66,67,68]
-    group5 = [15,16,17,42,43,44,69,70,71]
-    group6 = [18,19,20,45,46,47,72,73,74]
-    group7 = [21,22,23,48,49,50,75,76,77]
-    group8 = [24,25,26,51,52,53,78,79,80]
+    group0 = [0,1,2,9,10,11,18,19,20]
+    group1 = [3,4,5,12,13,14,21,22,23]
+    group2 = [6,7,8,15,16,17,24,25,26]
+    group3 = [27,28,29,36,37,38,45,46,47]
+    group4 = [30,31,32,39,40,41,48,49,50]
+    group5 = [33,34,35,42,43,44,51,52,53]
+    group6 = [54,55,56,63,64,65,72,73,74]
+    group7 = [57,58,59,66,67,68,75,76,77]
+    group8 = [60,61,62,69,70,71,78,79,80]
     SUBGROUPS = [group0, group1, group2, group3, group4, group5, group6, group7, group8]
 #----------------------------------------------------------------------------------------
-    checkGroup = []
-    s = None
-    for q in SUBGROUPS:
-        for index in q:
-            s = int(TotalNumbers[index])       #itera por cada numero
-            checkGroup.append(s)
-            s = None
-    if sum(checkGroup) == 405:
-        return True
-    else:
-        return False
+    azz = list()
+    for x in SUBGROUPS:
+        for i in x:     #ITERA POR CADA INDEX DE UN SUBGROUP
+            azz.append(int(TotalNumbers[i]))
+        if checkSum(azz) == False:
+            return False
+        else:
+            azz = []
+    return True
 
 
 
@@ -96,7 +83,6 @@ def DoIWin(file):
 
 
 print(DoIWin('test6.txt'))
-#print(checkRow([1,2,3,4,5,6,7,8,9]))
 
 
 
