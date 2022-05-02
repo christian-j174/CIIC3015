@@ -221,6 +221,10 @@ def valid_option(option):
         cook = False
         return False
 
+
+
+
+
 def show_recipe(list):
     """Prints the  ingredients needed for selected recipe """
     if list:
@@ -238,8 +242,10 @@ def show_recipe(list):
                     print( f"{list[i]} {units[i]} of {ingredients[i]}" )
 
 
-# def show_recipe(list):
+
+
 #     if list:
+# def show_recipe(list):
 #         print( 'Ingredients needed for selected recipe:' )
 #         yy = -1
 #         if yy < 5:
