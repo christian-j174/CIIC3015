@@ -1,0 +1,66 @@
+banana pancake
+1.0 cups of flour
+2.0 tablespoons of sugar
+1.0 eggs
+1.0 cups of milk
+3.0 teaspoons of cinnamon
+2.0 teaspoons of baking powder
+0.0 slices of bread
+2.0 bananas
+0.0 apples
+0.0 peaches
+peach crepe
+1.0 cups of flour
+0.0 tablespoons of sugar
+1.0 eggs
+1.0 cups of milk
+2.0 teaspoons of cinnamon
+0.0 teaspoons of baking powder
+0.0 slices of bread
+0.0 bananas
+0.0 apples
+3.0 peaches
+apple pie
+2.0 cups of flour
+4.0 tablespoons of sugar
+2.0 eggs
+0.5 cups of milk
+1.0 teaspoons of cinnamon
+1.0 teaspoons of baking powder
+0.0 slices of bread
+0.0 bananas
+5.0 apples
+0.0 peaches
+french toast
+0.5 cups of flour
+3.0 tablespoons of sugar
+3.0 eggs
+0.5 cups of milk
+2.0 teaspoons of cinnamon
+0.0 teaspoons of baking powder
+8.0 slices of bread
+0.0 bananas
+0.0 apples
+0.0 peaches
+scrambled eggs with toast and fruits
+0.0 cups of flour
+0.0 tablespoons of sugar
+4.0 eggs
+0.5 cups of milk
+0.0 teaspoons of cinnamon
+0.0 teaspoons of baking powder
+2.0 slices of bread
+0.0 bananas
+0.5 apples
+1.0 peaches
+chocolate
+1.0 cups of flour
+2.0 tablespoons of sugar
+3.0 eggs
+4.0 cups of milk
+5.0 teaspoons of cinnamon
+6.0 teaspoons of baking powder
+7.0 slices of bread
+8.0 bananas
+9.0 apples
+9.0 peaches

@@ -1,7 +1,5 @@
-fh = open('recipes.txt', 'w')
+ll = [1,2,4,'ss']
 
-fh.write('HOLA EMANUEL' + '\n')
+if 'ss' in ll:
+    print(1)
 
-fh.write('anuell')
-
-fh.close()

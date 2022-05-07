@@ -15,20 +15,18 @@ menu = [banana_pancake_recipe, peach_crepe_recipe, apple_pie_recipe, french_toas
 menu_list = ["banana pancake", "peach crepe", "apple pie", "french toast", "scrambled eggs with toast and fruits"]
 
 
-# def create_recipes():
-#     fh = open( 'recipe.txt', 'w' )
-#     for i in range( 0, 5 ):
-#         fh.write( menu_list[i] + '\n' )
-#         track = menu[i]  # LISTA DE CANTIDADES
-#         for i in range( 0, 10 ):
-#             if i == 2 or i == 7 or i == 8 or i == 9:
-#                 fh.write( f"{track[i]} {ingredients[i]}" + '\n' )
-#             else:
-#                 fh.write( f"{track[i]} {units[i]} of {ingredients[i]}" + '\n' )
-#     fh.close()
+def create_recipes():
+    fh = open( 'recipe.txt', 'w' )
+    for i in range( 0, 5 ):
+        fh.write( menu_list[i] + '\n' )
+        track = menu[i]  # LISTA DE CANTIDADES
+        for i in range( 0, 10 ):
+            if i == 2 or i == 7 or i == 8 or i == 9:
+                fh.write( f"{track[i]} {ingredients[i]}" + '\n' )
+            else:
+                fh.write( f"{track[i]} {units[i]} of {ingredients[i]}" + '\n' )
+    fh.close()
 
-# create_recipes()
-# ------------------------------------------------------------------------------
 
 def read_recipes():
     fh = open( 'recipe.txt' )
@@ -51,49 +49,25 @@ def read_recipes():
     return menu, menu_list
 
 
-menu1, menu_list1 = read_recipes()
-
-
-# ---------------------------------------------------------------------------------------
-
-
 def add_new_recipe():
     recipe_name = input( "Name of the new recipe: " )
-    menu_list1.append( recipe_name )
+    menu_list.append( recipe_name )
     new_recipe = {}
-
     for i in range( len( units ) ):
         unit = units[i]
         if unit:
             unit += ' of '
         ingredient = ingredients[i]
-        item = float( input( 'How many ' + str( unit ) + str( ingredient ) + ' are required? ' ) )
+        item = input( 'How many ' + str( unit ) + str( ingredient ) + ' are required? ' )
         new_recipe[f"{unit}{ingredient}"] = float( item )
+    menu.append( new_recipe )
+    return menu, menu_list
 
-    menu1.append( new_recipe )
-    return menu1, menu_list1
+create_recipes()
+menu, menu_list = read_recipes()
+menu, menu_list = add_new_recipe()
 
-
-# ------------------------------------------------------------------------------------------------------
-
-
-def add_new_recipe_to_file():
-    menu2, menu_list2 = add_new_recipe()
-    fh = open( 'recipe_updated.txt', 'w' )
-    track_last_dic = len( menu_list2 ) - 1
-    x = track_last_dic
-
-    for i in range( len( menu2 ) ):
-        fh.write( menu_list2[i] + '\n' )
-        track = menu2[i]  # LISTA DE DICCIONARIOS
-        for key, value in track.items():
-            if '' in key:
-                fh.write( f"{value} {key}" + '\n' )
-            else:
-                fh.write( f"{key} of {value}" + '\n' )
-    fh.close()
+print(menu[5])
 
 
 
-
-add_new_recipe_to_file()

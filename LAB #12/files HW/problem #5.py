@@ -21,3 +21,27 @@ def beach_dist(file):
                 Maxxx = value[0]
     return rr
 
+
+#
+# def beach_dist(fname):
+#   cCity=''
+#   cDistance=0
+#   fh=open(fname)
+#   for line in fh:
+#     line=line.rstrip()
+#     comma=line.find(',')
+#     city=line[:comma]       #encuentra el town
+#     space = city.find( ' ' )
+#     print(space)
+#     dist=line[comma+1:space]
+#     n_or_nb=line[space+1:]
+#     if n_or_nb=='b':
+#       d=int(dist)
+#       if cDistance==0 or cDistance>d:
+#         cDistance=d
+#         cCity=city
+#   fh.close()
+#   return str(cCity)
+#
+#
+# beach_dist('test5.txt')
